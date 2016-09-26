@@ -1,0 +1,85 @@
+//
+// Headings
+//
+
+// Common settings
+h1,h2,h3,h4,h5,h6 {
+  font-family: fontFamily(headline);
+  color: palette(black);
+}
+
+// Hierarchy
+$heading-base: fontSize(base);
+$heading-base-mobile: fontSize(base-mobile);
+
+h1, .as-h1 {
+	font-size: pem(48px, fontSize(base));
+  font-weight: fontWeight(headline);
+	line-height: 1; // 48
+	* + & {
+		margin-top: space(standard, large);
+	}
+}
+h2, .as-h2 {
+	font-size: pem(32px, fontSize(base));
+  font-weight: fontWeight(headline);
+	line-height: 1.125; //36
+	* + & {
+		margin-top: space(standard, large);
+	}
+}
+h3, .as-h3 {
+	font-size: pem(24px, fontSize(base));
+  font-weight: fontWeight(headline);
+	line-height: 1.25; // 30
+	* + & {
+		margin-top: space(standard, medium);
+	}
+	+ * {
+		margin-top: space(standard, small);
+	}
+}
+h4, .as-h4 {
+	font-size: pem(24px, fontSize(base));
+	line-height: 1.25; // 30
+	font-weight: fontWeight(body);
+	+ * {
+		margin-top: space(standard, small);
+	}
+}
+h5, .as-h5 {
+	font-size: pem(18px, fontSize(base));
+  font-weight: fontWeight(headline);
+	line-height: lineHeight(base);
+	+ * {
+		margin-top: 0;
+	}
+}
+h6, .as-h6 {
+	font-size: pem(18px, fontSize(base));
+	font-style: italic;
+	font-weight: fontWeight(body);
+	line-height: lineHeight(base);
+	+ * {
+		margin-top: 0;
+	}
+}
+
+// Etc.
+hgroup {
+  * + * {
+  	margin-top: 0;//space(standard, x-small);
+  }
+  * {
+  	line-height: lineHeight(tight);
+  }
+}
+.heading__eyebrow {
+	display: block;
+	font-size: fontSize(base);
+	font-weight: inherit;
+	line-height: lineHeight(base);
+}
+	
+	
+

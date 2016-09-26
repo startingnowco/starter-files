@@ -1,0 +1,76 @@
+//
+// Mixins
+//
+
+// Clearfix
+
+@mixin clearfix {
+  *zoom: 1;
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin zero {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin incognitolink {
+  color: inherit;
+  text-decoration: none;
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
+}
+
+// Hide text for text replacement
+
+@mixin hide-text {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+}
+
+// Hide from both screenreaders and browsers: h5bp.com/u
+@mixin hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+@mixin visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+// Pixels to ems
+
+@function pem($px, $base: 16) {
+    @return ($px / $base) + em;
+}
+
+// Device pixel ratio for retina images
+
+@mixin device-pixel-ratio($ratio: 2) {
+  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+  only screen and (min--moz-device-pixel-ratio: $ratio),
+  only screen and (  -o-min-device-pixel-ratio: #{($ratio*10)}/10),
+  only screen and (     min-device-pixel-ratio: $ratio),
+  only screen and (             min-resolution: #{($ratio*96)}dpi),
+  only screen and (             min-resolution: #{$ratio}dppx) { 
+    @content;
+  }
+}

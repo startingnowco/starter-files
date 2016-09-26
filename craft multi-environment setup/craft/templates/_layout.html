@@ -1,0 +1,28 @@
+{% include 'includes/_html-head.html' %}
+
+<body{% if bodyClass is defined %} class="{{ bodyClass }}"{% endif %}>
+
+<div id="OuterWrap">
+<div id="InnerWrap">
+
+	{% include 'includes/_global-header.html' %}
+	
+	<section id="Content" class="site-content">
+	
+		<div class="site-content__inner lc">
+	
+		{% block aside %}{% endblock %}
+		{% block main %}{% endblock %}
+  
+  	</div>
+				
+	</section><!-- end content -->
+  
+	{% include 'includes/_global-footer.html' %}
+	  
+</div>
+<!--/#InnerWrap-->
+</div>
+<!--/#OuterWrap-->
+
+{% include 'includes/_html-foot.html' %}

@@ -1,0 +1,35 @@
+//
+// Tables
+//
+
+table {
+	border-collapse: collapse; 
+	border-spacing: 0; 
+	border-width: 0;
+	width: 100%;
+}
+
+th, td {
+	border-bottom: 1px solid palette(gray);
+	padding: space(standard, small);
+	text-align: left;
+	&:first-child {
+		padding-left: 0;
+	}
+	&:last-child {
+		padding-right: 0;
+	}
+	@include breakpoint(0 $bp-med) {
+		padding: space(mobile, small);
+		&:first-child	{ padding-left: 0; }
+		&:last-child	{ padding-right: 0; }
+	}
+}
+
+th {
+	font-weight: fontWeight(headline);
+}
+
+.data--numeric {
+	text-align: right;
+}

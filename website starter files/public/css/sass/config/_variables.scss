@@ -1,0 +1,293 @@
+//
+// Variables
+//
+
+//
+// Color palettes
+//
+
+/*
+Define palettes like this:
+
+$palettes: (
+	gray: (
+		x-light: #xxxxxx,
+		light: #xxxxxx,
+		mid-light: #xxxxxx,
+		base: #xxxxxx,
+		mid-dark: #xxxxxx,
+		dark: #xxxxxx,
+		x-dark: #xxxxxx
+	)
+);
+
+Call in CSS like this:
+
+a {
+    color: palette(gray);
+    &:hover {
+        color: palette(gray, light);
+    }
+}
+*/
+
+$palettes: (
+	black: (
+		base: #202020
+	),
+	white: (
+		base: #ffffff
+	), 
+	red-32: (
+		base: #f65058,
+		light: lighten(#f65058, 10%),
+		dark: darken(#f65058, 10%)
+	),
+	process-blue: (
+		base: #0083c3,
+		light: lighten(#0083c3, 10%),
+		dark: darken(#0083c3, 10%)
+	),
+	process-cyan: (
+		base: #0097db,
+		light: lighten(#0097db, 10%),
+		dark: darken(#0097db, 10%)
+	),
+	process-magenta: (
+		base: #d53f77,
+		light: lighten(#d53f77, 10%),
+		dark: darken(#d53f77, 10%)
+	),	
+	process-yellow: (
+		base: #ffe52b,
+		light: lighten(#ffe52b, 10%),
+		dark: darken(#ffe52b, 10%)
+	),
+	postit-yellow: (
+		base: #ffffa5
+	),
+	gray: (
+			base: #bfc1c3,
+			x-light: #f8f8f8,
+			light: #dee0e2,
+			dark: #6f777b,
+			x-dark: #404040
+	),
+	status: (
+		error: #f00,
+		success: #5ddd00,
+		info: #9cf
+	),
+	social: (
+		facebook: #03539e,
+		twitter: #35ccff,
+		linkedin: #217bc1
+	),
+	overlay: (
+		base: rgba(0,0,0,.2),
+		light: rgba(255,255,255,.8)
+	)
+);
+
+@function palette($palette, $tone: 'base') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
+
+
+//
+// Typography
+//
+
+// Base type colors
+$body-color: palette(gray, x-dark);
+$headline-color: palette(black);
+
+// Maps
+$fontFamilies: (
+	base: ("HelveticaNeue", "Helvetica", "Arial", sans-serif),
+	headline: ("HelveticaNeue", "Helvetica", "Arial", sans-serif),
+	body: ("HelveticaNeue", "Helvetica", "Arial", sans-serif)
+);
+$fontWeights: (
+	base: 400,
+	headline: 700,
+	body: 400
+);
+$fontSizes: (
+	base: 18px,
+	base-mobile: 15px,
+	base-em: 1em,
+	x-small: .625em,
+	small: .75em,
+	large: 1.375em,
+	x-large: 1.5em
+);
+$lineHeights: (
+	base: 1.333333,
+	base-mobile: 1.333333,
+	tight: 1.2,
+	flush: 1,
+	loose: 1.5
+);
+
+// Functions
+@function fontFamily($family: 'base') {
+		@return map-get($fontFamilies, $family);
+}
+@function fontWeight($weight: 'base') {
+		@return map-get($fontWeights, $weight);
+}
+
+@function fontSize($size: 'base') {
+		@return map-get($fontSizes, $size);
+}
+
+@function lineHeight($height: 'base') {
+		@return map-get($lineHeights, $height);
+}
+
+//
+// Borders
+//
+
+$border-color-base: pallete(gray, light);
+
+$borders: (
+	color: $border-color-base,
+	style: solid,
+	width: 1px
+);
+
+@function border($prop) {
+	@if map-has-key($borders, $prop) {
+		@return map-get($borders, $prop);
+	}
+	@warn "The key #{$prop} is not in the map '$borders'";
+	@return null;
+}
+
+//
+// Sizes
+//
+
+$space-base: fontSize(base) * lineHeight(base);
+$space-base-mobile: fontSize(base-mobile) * lineHeight(base-mobile);
+
+$spaces: (
+	base: 0px,
+	standard: (
+		single: $space-base,
+		x-small: $space-base*.25,
+		small: $space-base*.5,
+		medium: $space-base*1.5,
+		large: $space-base*2,
+		x-large: $space-base*4	
+	),
+	mobile: (
+		single: $space-base-mobile,
+		x-small: $space-base-mobile*.25,
+		small: $space-base-mobile*.5,
+		medium: $space-base-mobile*1.5,
+		large: $space-base-mobile*2,
+		x-large: $space-base-mobile*4	
+	)
+);
+
+@function space($space: 'base', $multiple: 'single') {
+    @return map-get(map-get($spaces, $space), $multiple);
+}
+
+//
+// Layers
+//
+
+$layers: (
+  offcanvas: 1,
+  lightbox: 500,
+  modal: 100,
+  dropdown: 10,
+  tooltip: 15
+);
+
+@function layer($name) {
+  @if map-has-key($layers, $name) {
+    @return map-get($layers, $name);  
+  }
+   
+  @warn "The key #{$name} is not in the map '$layers'";
+  @return null;
+};
+
+//
+// Breakpoints
+//
+
+/* For the breakpoint sass library */
+$breakpoint-to-ems: true;
+
+$bp-med: 748px;
+$bp-large: 960px;
+$bp-x-large: 1200px;
+
+//
+// Grid
+//
+
+// Grid settings
+
+$grid-max: 1080px;
+/*
+$grid-padding: 10px;
+$grid-padding-med: 20px;
+$grid-padding-large: 40px;
+*/
+$grid-paddings: (
+	base: 10px,
+	med: 20px,
+	large: 40px
+);
+
+@function gridPadding($gp: base){
+	@return map-get($grid-paddings, $gp);
+}
+
+// Susy grid
+
+$susy: (
+  columns: 12,
+  gutters: .25,
+  global-box-sizing: border-box
+);
+
+/*
+Susy's defaults:
+
+$susy: (
+  flow: ltr,
+  math: fluid,
+  output: float,
+  gutter-position: after,
+  container: auto,
+  container-position: center,
+  columns: 4,
+  gutters: .25,
+  column-width: false,
+  global-box-sizing: content-box,
+  last-flow: to,
+  debug: (
+    image: hide,
+    color: rgba(#66f, .25),
+    output: background,
+    toggle: top right,
+  ),
+  use-custom: (
+    background-image: true,
+    background-options: false,
+    box-sizing: true,
+    clearfix: false,
+    rem: true,
+  )
+);
+*/
+
+// End variables

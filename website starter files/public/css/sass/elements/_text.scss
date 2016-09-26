@@ -1,0 +1,93 @@
+//
+// Text
+//
+
+p {
+	font-size: fontSize(base-em);
+	line-height: lineHeight(base);
+}
+
+// Lead paragraph
+.lede {
+	font-size: pem(24px, fontSize(base));
+	color: $headline-color;
+}
+
+//
+// Blockquote
+
+blockquote {
+	border-left: 1px solid palette(gray);
+	margin: {
+		top: space(standard, medium);
+		bottom: space(standard, medium);
+	}
+	padding: {
+		left: space(standard, single);
+		right: space(standard, large);
+	}
+	font-style: italic;
+}
+
+//
+// Inline elements
+
+small {
+	font-size: fontSize(small);
+}
+
+strong {
+	font-weight: fontWeight(headline);
+}
+
+em {
+	font-style: italic;
+}
+
+q {
+	&:before {
+		content: "“";
+		display: inline-block;
+	}
+	&:after {
+		content: "”";
+		display: inline-block;
+	}
+}
+
+mark {
+	background: palette(postit-yellow);
+}
+
+// Code
+
+code {
+  font: 1em/lineHeight(tight) 'Courier New', Courier, monospace;
+}
+
+// Abbreviation
+
+abbr {
+  border-bottom: 1px dotted;
+  border-color: palette(gray);
+  cursor: help;
+}
+
+// Sub- and superscript
+
+sub, sup { line-height: 0; }
+
+// Horizontal rule
+
+hr {
+  clear: both;
+  display: block;
+  margin: space(mobile, large) 0 space(mobile, medium);
+  padding: 0;
+  height: 2px;
+  border: 0;
+  border-top: 1px solid palette(gray, light);
+  @include breakpoint($bp-med) {
+  	margin: space(standard, large) 0 space(standard, medium);
+  }
+}

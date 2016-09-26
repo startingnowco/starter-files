@@ -1,0 +1,22 @@
+//
+// Media
+//
+
+img, video, object {
+	max-width: 100%;
+	height: auto;
+}
+
+figure {
+	img {
+		display: block;
+	}
+	figcaption {
+		margin-top: space(standard, small);
+		font-size: fontSize(small);
+		//line-height: lineHeight(tight);
+		font-style: italic;
+	}
+
+
+}

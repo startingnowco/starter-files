@@ -1,0 +1,116 @@
+//
+// Accordion
+//
+
+// Base styles
+
+.accord {
+	border-bottom: 1px solid palette(gray);
+}
+
+.accord__row {
+	position: relative;
+	border-top: 1px solid palette(gray);
+	margin-top: 0;
+}
+
+.accord__head {
+	display: flex;
+	align-items: stretch;
+	> * {
+		margin-top: 0;
+	}
+}
+
+.accord__head__title {
+	flex: 1 1 auto;
+	padding: space(mobile, small) 0;
+	font-weight: fontWeight(headline);
+	color: $headline-color;
+	a {
+		@include incognitolink;
+	}
+}
+
+.accord__head__num {
+	min-width: 25px;
+	padding: space(mobile, small);
+	padding-left: 0;
+	color: palette(gray);
+}
+
+.accord__head__buttons {
+	position: relative;
+	width: 40px;
+	outline: 1px solid palette(gray);
+	background-color: palette(gray, x-light);
+}
+
+.accord__btn--collapse,
+.accord__btn--expand {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -25px;
+	&:hover {
+		opacity: .3;
+	}
+}
+
+.accord__body {
+	margin: 0 25px space(mobile, single);
+}
+
+@include breakpoint($bp-med) {
+	.accord__head__title {
+		padding: space(standard, small) 0;
+	}
+	.accord__head__num {
+		min-width: 35px;
+		padding: space(standard, small);
+		padding-left: 0;
+	}
+	.accord__head__buttons {
+		width: 50px;
+	}
+	.accord__body {
+		margin: 0 35px space(standard, single);
+	}
+}
+
+// States
+
+.no-js .accord {
+		.accord_head__buttons {
+			display: none;
+		}
+}
+
+.js .accord {
+
+	.accord__row.is-collapsed {
+		.accord__btn--expand {
+			display: block;
+		}
+		.accord__btn--collapse {
+			display: none;
+		}
+		.accord__body {
+			display: none;
+		}
+	}
+
+	.accord__row {
+		.accord__btn--expand {
+			display: none;
+		}
+		.accord__btn--collapse {
+			display: block;
+		}
+		.accord__body {
+			display: block;
+		}
+	}
+	
+}

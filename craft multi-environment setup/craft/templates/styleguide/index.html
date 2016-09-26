@@ -1,0 +1,1111 @@
+{% extends "_layout" %}
+{% set title = 'Style guide' %}
+{# {% set bodyClass = 'sec-home l-1col' %} #}
+
+
+{% block aside %}{% endblock %}
+
+{% block main %}
+<section class="site-content__main">
+
+	<h1>Style guide</h1>
+
+	<section id="TOC">
+		<h3>
+			Contents:
+		</h3>
+		
+		<ul class="accord">
+			<li class="accord__row is-collapsed">
+				<header class="accord__head">
+					<span class="accord__head__num">01</span>
+					<div class="accord__head__title">
+						<a class="js-animate-scroll" href="#Typography">Typography</a>
+					</div>
+					<div class="accord__head__buttons">
+							<a class="accord__btn--expand" href="#"><i class="icon icon--plus"></i></a>
+							<a class="accord__btn--collapse" href="#"><i class="icon icon--minus"></i></a>
+					</div>
+				</header>
+				<div class="accord__body">
+					<ul class="list">
+						<li><a class="js-animate-scroll" href="#Typeface">Typeface</a></li>
+						<li><a class="js-animate-scroll" href="#Headings">Headings</a></li>
+						<li><a class="js-animate-scroll" href="#HeadingGroup">Heading groups</a></li>
+						<li><a class="js-animate-scroll" href="#LeadParagraph">Lead paragraph</a></li> 
+						<li><a class="js-animate-scroll" href="#BodyCopy">Body copy</a></li>
+						<li><a class="js-animate-scroll" href="#Links">Links</a></li>
+						<li><a class="js-animate-scroll" href="#Lists">Lists</a></li>
+						<li><a class="js-animate-scroll" href="#Blockquote">Blockquote</a></li>
+						<li><a class="js-animate-scroll" href="#InlineElements">Inline elements</a></li>
+						<li><a class="js-animate-scroll" href="#Time">Time</a></li>
+						<li><a class="js-animate-scroll" href="#PreformattedText">Preformatted text</a></li>
+						<li><a class="js-animate-scroll" href="#HorizontalRule">Horizontal rule</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="accord__row is-collapsed">
+				<header class="accord__head">
+					<span class="accord__head__num">02</span>
+					<div class="accord__head__title">
+						<a class="js-animate-scroll" href="#Color">Color</a>
+					</div>
+					<div class="accord__head__buttons">
+							<a class="accord__btn--expand" href="#"><i class="icon icon--plus"></i></a>
+							<a class="accord__btn--collapse" href="#"><i class="icon icon--minus"></i></a>
+					</div>
+				</header>
+				<div class="accord__body">
+					<ul class="list">
+						<li><a class="js-animate-scroll" href="#ColorContrast">Color contrast</a></li>
+						<li><a class="js-animate-scroll" href="#BasePalette">Base palette</a></li>
+						<li><a class="js-animate-scroll" href="#GrayscalePalette">Grayscale palette</a></li>
+						<li><a class="js-animate-scroll" href="#StatusColors">Status colors</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="accord__row is-collapsed">
+				<header class="accord__head">
+					<span class="accord__head__num">03</span>
+					<div class="accord__head__title">
+						<a class="js-animate-scroll" href="#IconsAndImages">Icons and images</a>
+					</div>
+					<div class="accord__head__buttons">
+							<a class="accord__btn--expand" href="#"><i class="icon icon--plus"></i></a>
+							<a class="accord__btn--collapse" href="#"><i class="icon icon--minus"></i></a>
+					</div>
+				</header>
+				<div class="accord__body">
+					<ul class="list">
+						<li><a href="#Icons">Icons</a></li>
+						<li><a href="#StepCircles">Step circles</a></li>
+						<li><a href="#Logo">Logo</a></li>
+						<li><a href="#Images">Images</a></li>
+						<li><a href="#FigureWithCaption">Figure with caption</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="accord__row is-collapsed">
+				<header class="accord__head">
+					<span class="accord__head__num">04</span>
+					<div class="accord__head__title">
+						<a class="js-animate-scroll" href="#Tables">Tables</a>
+					</div>
+					<div class="accord__head__buttons">
+							<a class="accord__btn--expand" href="#"><i class="icon icon--plus"></i></a>
+							<a class="accord__btn--collapse" href="#"><i class="icon icon--minus"></i></a>
+					</div>
+				</header>
+				<div class="accord__body">
+					<ul class="list">
+						<li><a href="#NumericTabularData">Numeric tabular data</a></li>
+						<li><a href="#DataInATable">Data in a table</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="accord__row is-collapsed">
+				<header class="accord__head">
+					<span class="accord__head__num">05</span>
+					<div class="accord__head__title">
+						<a class="js-animate-scroll" href="#Buttons">Buttons</a>
+					</div>
+					<div class="accord__head__buttons">
+							<a class="accord__btn--expand" href="#"><i class="icon icon--plus"></i></a>
+							<a class="accord__btn--collapse" href="#"><i class="icon icon--minus"></i></a>
+					</div>
+				</header>
+				<div class="accord__body">
+					<ul class="list">
+						<li><a href="#ButtonText">Button text</a></li>
+						<li><a href="#ButtonTypes">Button types</a></li>
+						<li><a href="#ButtonGroup">Button group</a></li>
+					</ul>
+				</div>
+			</li>
+			<li class="accord__row is-collapsed">
+				<header class="accord__head">
+					<span class="accord__head__num">06</span>
+					<div class="accord__head__title">
+						<a class="js-animate-scroll" href="#Forms">Forms</a>
+					</div>
+					<div class="accord__head__buttons">
+							<a class="accord__btn--expand" href="#"><i class="icon icon--plus"></i></a>
+							<a class="accord__btn--collapse" href="#"><i class="icon icon--minus"></i></a>
+					</div>
+				</header>
+				<div class="accord__body">
+					<ul class="list ">
+						<li><a href="#OptionalAndMandatoryFields">Optional and mandatory fields</a></li>
+						<li><a href="#LabelsAndFields">Labels and fields</a></li>
+						<li><a href="#FormFocusStates">Form focus states</a></li>
+						<li><a href="#HintText">Hint text</a></li>
+						<li><a href="#FormSpacing">Form spacing</a></li>
+						<li><a href="#FieldsetsAndLegends">Fieldsets and legends</a></li>
+						<li><a href="#SelectBoxes">Select boxes</a></li>
+						<li><a href="#RadioButtons">Radio buttons</a></li>
+						<li><a href="#Checkboxes">Checkboxes</a></li>
+						<li><a href="#ConditionallyRevealingContent">Conditionally revealing content</a></li>
+					</ul>
+				</div>
+			</li>
+		</ul>				
+	</section>
+
+	<hr>
+
+	<section id="Typography">
+		<h2>Typography</h2>
+		<h3 id="Typeface">
+			Typeface
+		</h3>
+		<p>
+			The primary typeface is XXXXXXXXX. Use it in regular and bold weights for headers and running text. It is available on XXXXXXX.
+		</p>
+		<h3 id="Headings">
+			Headings
+		</h3>
+		<ul class="list list--bullet">
+			<li>use sentence case for headings</li>
+			<li>use headings consistently to create a clear hierarchy</li>
+			<li>eyebrows within headings are marked up with <code>span</code> elements</li>
+		</ul>
+		<div class="example">
+			<h1>
+				Heading Level 1
+			</h1>
+			<p>Here's a pararaph of text that follows a heading lorem ipsum dolor sit amet consecutat velorem dolor.</p>
+			<h2>
+				Heading Level 2
+			</h2>
+			<p>Here's a pararaph of text that follows a heading lorem ipsum dolor sit amet consecutat velorem dolor.</p>
+			<h3>
+				Heading Level 3
+			</h3>
+			<p>Here's a pararaph of text that follows a heading lorem ipsum dolor sit amet consecutat velorem dolor.</p>
+			<h4>
+				Heading Level 4
+			</h4>
+			<p>Here's a pararaph of text that follows a heading lorem ipsum dolor sit amet consecutat velorem dolor.</p>
+			<h5>
+				Heading Level 5
+			</h5>
+			<p>Here's a pararaph of text that follows a heading lorem ipsum dolor sit amet consecutat velorem dolor.</p>
+			<h6>
+				Heading Level 6
+			</h6>
+			<p>Here's a pararaph of text that follows a heading lorem ipsum dolor sit amet consecutat velorem dolor.</p>
+			<h2><span class="heading__eyebrow">Eyebrow here<b class="is-visually-hidden">:</b></span> Main heading here lorem ipsum</h2>
+		</div>
+		<h3 id="HeadingGroup">
+			Heading groups
+		</h3>
+		<p>Use a heading group to mark up title / subtitle combinations.</p>
+		<div class="example">
+			<hgroup>
+				<h3>Main hgroup heading here</h3>
+				<h4>Subtitle is here lorem ipsum dolor</h4> 
+			</hgroup>
+		</div>
+		<h3 id="LeadParagraph">
+			Lead paragraph
+		</h3>
+		<ul class="list list--bullet">
+			<li>lead paragraphs introduce major page sections</li>
+			<li>use only one lead paragraph per page</li>
+		</ul>
+		<div class="example">
+			<p class="lede">
+				Here is a lead paragraph. It introduces the content that follows. Lorem ipsum dolor sit amet consecutat velorem dolor.
+			</p>
+			<p>
+				Here is a body copy paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit mollis purus, nec pharetra lacus viverra non. Donec vitae odio lacus.
+			</p>
+		</div>
+		<h3 id="BodyCopy">
+			Body copy
+		</h3>
+		<ul class="list list--bullet">
+			<li>use the primary typeface for body copy</li>
+			<li>bold and italics may be used when appropriate for the content</li>
+			<li>supporting text paragraphs may be used for footnotes, asides, or similar</li>
+			<li>lines of text shouldn't exceed 75 characters, as they become harder to read beyond that point</li>
+		</ul>
+		<div class="example">
+			<p>
+				A body copy paragraph, maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. 
+			</p>
+			<p>
+				<small>A supporting text paragraph, maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla.</small>
+			</p>
+		</div>
+
+		<h3 id="Links">Links</h3>
+
+		<ul class="list list--bullet">
+			<li>
+				links within body copy should be blue and underlined
+			</li>
+			<li>
+				links without surrounding text should not have a full stop at the end
+			</li>
+			<li>
+				link colours can be found in the colour palette
+			</li>
+		</ul>
+
+		<div class="example">
+			<p>
+				<a href="#">A link without surrounding text</a>
+			</p>
+			<p>
+				<a href="#">A body copy link</a>. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+			</p>
+			<p>
+				<a href="#" rel="external">An external link.</a> Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+			</p>
+			<p>
+				<a href="#" class="link--back">Back</a>
+			</p>
+			<p>
+				<a href="#" class="link--top">Top</a>
+			</p>
+		</div>
+	
+		<h3 id="Lists">Lists</h3>
+	
+		<p>There are three types of lists: unordered, ordered, and definition. Items in bulleted and numbered lists start with a lowercase letter and have no period at the end.</p>
+	
+		<div class="example">
+
+			<ul class="list list--bullet">
+				<li>This is a list item in an unordered list</li>
+				<li>An unordered list is a list in which the sequence of items is not important. Sometimes, an unordered list is a bulleted list. And this is a long list item in an unordered list that can wrap onto a new line. </li>
+				<li>
+				Lists can be nested inside of each other
+					<ul class="list list--bullet">
+						<li>This is a nested list item</li>
+						<li>This is another nested list item in an unordered list</li>
+					</ul>
+				</li>
+				<li>This is the last list item</li>
+			</ul>
+
+			<ol class="list list--number">
+				<li>This is a list item in an ordered list</li>
+				<li>An ordered list is a list in which the sequence of items is important. An ordered list does not necessarily contain sequence characters.</li>
+				<li>
+				Lists can be nested inside of each other
+					<ol class="list list--number">
+						<li>This is a nested list item</li>
+						<li>This is another nested list item in an ordered list</li>
+					</ol>
+				</li>
+				<li>This is the last list item</li>
+			</ol>
+
+			<h5>A standard list</h5>
+			<ul class="list">
+				<li><a href="#">Related link</a></li>
+				<li><a href="#">Related link</a></li>
+				<li><a href="#">Related link</a></li>
+				<li><a class="link--more" href="#">More</a></li>
+			</ul>
+
+			<dl>
+				<dt>Definition List</dt>
+				<dd>A number of connected items or names written or printed consecutively, typically one below the other.</dd>
+				<dt>This is a term.</dt>
+				<dd>This is the definition of that term, which both live in a <code>dl</code>.</dd>
+				<dt>Here is another term.</dt>
+				<dd>And it gets a definition too, which is this line.</dd>
+				<dt>Here is term that shares a definition with the term below.</dt>
+				<dd>And it gets a definition too, which is this line.</dd>
+			</dl>
+
+		</div>
+	
+		<h3 id="Blockquote">Blockquote</h3>
+	
+		<p>A block quotation (or extract) is a long quotation set of from the main text of a written document.</p>
+	
+		<div class="example">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit mollis purus, nec pharetra lacus viverra non. Donec vitae odio lacus.</p>
+			<blockquote>
+			<p>Aenean interdum laoreet sem vitae malesuada. Proin dignissim laoreet dolor, sollicitudin eleifend leo viverra non. Sed malesuada risus eget porta fringilla. Sed non ligula elementum mauris tempus sodales.</p>
+			</blockquote>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla suscipit mollis purus, nec pharetra lacus viverra non. Donec vitae odio lacus.</p>
+		</div>
+	
+		<h3 id="InlineElements">Inline elements</h3>
+	
+		<p>Inline elements occur inside block level elements like paragraphs and lists.</p>
+	
+		<div class="example">
+
+			<p>Strong is used to indicate <strong>strong importance</strong>. This text has <em>added emphasis</em>.</p>
+
+			<p>The <b>b element</b> is stylistically different text from normal text, without any special importance. The <i>i element</i> is text that is set off from the normal text. The <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation.</p>
+
+			<p><del>This text is deleted</del> and <ins>This text is inserted</ins>. <s>This text has a strikethrough</s>.</p>
+
+			<p>Here's a superscript<sup>®</sup>. A subscript is used for things like H<sub>2</sub>O.</p>
+
+			<p><small>This small text is small for for fine print, etc.</small></p>
+
+			<p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
+
+			<p>Keybord input: <kbd>Cmd</kbd></p>
+
+			<p><q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q></p>
+
+			<p><cite>This is a citation.</cite></p>
+
+			<p>The <dfn>dfn element</dfn> indicates a definition. The <mark>mark element</mark> indicates a highlight.</p>
+
+			<p><code>This is what inline code looks like.</code></p>
+
+			<p><samp>This is sample output from a computer program</samp></p>
+
+			<p>The <var>variable element</var>, such as <var>x</var> = <var>y</var></p>
+		
+		</div>				
+
+		<h3 id="Time">Time</h3>
+	
+		<p>Times and dates should be marked up using the <code>time</code> element.</p>
+	
+		<div class="example">
+			<time datetime="2013-04-06T12:32+00:00">2 weeks ago</time>
+		</div>
+	
+		<h3 id="PreformattedText">Preformatted text</h3>
+	
+		<p>Preformatted text preserves the character formatting in the HTML.</p>
+	
+		<div class="example">
+<pre>
+A  B  C  D  E  F  G  H
+I  J  K  L  M  N  O  P
+Q  R  S  T  U  V  W  X
+a  b  c  d  e  f  g  h
+i  j  k  l  m  n  o  p
+q  r  s  t  u  v  w  x
+0  1  2  3  4  5  6  7
+8  9  .  ,  !  ?  ;  "
+</pre>
+		</div>
+	
+		<h3 id="HorizontalRule">Horizontal rule</h3>
+	
+		<p>Horizontal rules may be used to separate major sections. In most cases, however, a border applied via CSS is preferable.</p>
+	
+		<div class="example">
+			<hr>
+		</div>
+	
+		<p><a class="link--top js-animate-scroll" href="#TOC">Contents</a></p>
+	
+	</section>
+
+	<hr>
+
+	<section id="Color">
+		<h2>Color</h2>
+		<p>Lorem ipsum dolor sit amet vivamus sgittis lacus velaugeu laoreet rutrum faucibus dolor auctor.</p>
+		<h3 id="ColorContrast">Color contrast</h3>
+		<p>The colour contrast ratio for text and interactive elements should be at least 4.5:1 <a href="http://www.w3.org/TR/UNDERSTANDING-WCAG20/visual-audio-contrast-contrast.html">as recommended by the W3C</a>.</p>
+		<h3 id="BasePalette">Base palette</h3>
+		<div class="example">
+			<div class="swatch-set">
+				<!--<h4 class="swatch-set__title">Text</h4>-->
+				<div class="swatch swatch--black">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Black</li>
+						<li class="swatch__spec">#202020</li>
+						<!-- <li class="swatch__variable-name">palette(black)</li> -->
+					</ul>
+				</div>
+				<div class="swatch swatch--white">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">White</li>
+						<li class="swatch__spec">#ffffff</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--red-32">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Red 032</li>
+						<li class="swatch__spec">#f65058</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--process-blue">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Blue</li>
+						<li class="swatch__spec">#0083c3</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--process-magenta">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Magenta</li>
+						<li class="swatch__spec">#d53f77</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--process-cyan">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Cyan</li>
+						<li class="swatch__spec">#0097db</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--process-yellow">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Yellow</li>
+						<li class="swatch__spec">#ffe52b</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--
+		<h3 id="ExtendedPalette">Extended palette</h3>
+		<div class="example">
+			<div class="swatch-set">
+				<h4 class="swatch-set__title">Text</h4>
+				<ul class="swatch">
+					<li class="swatch__chip"></li>
+					<li class="swatch__name">Black</li>
+					<li class="swatch__spec">#0B0C0C</li>
+					<li class="swatch__variable-name">$black</li>
+				</ul>
+			</div>
+		</div>
+		-->
+		<h3 id="GrayscalePalette">Grayscale palette</h3>
+		<div class="example">
+			<div class="swatch-set">
+				<div class="swatch swatch--gray-x-dark">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">X-dark gray</li>
+						<li class="swatch__spec">#404040</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--gray-dark">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Dark gray</li>
+						<li class="swatch__spec">#6f777b</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--gray">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Gray</li>
+						<li class="swatch__spec">#bfc1c3</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--gray-light">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Light gray</li>
+						<li class="swatch__spec">#dee0e2</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--gray-x-light">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">X-light gray</li>
+						<li class="swatch__spec">#f8f8f8</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<h3 id="StatusColors">Status colors</h3>
+		<div class="example">
+			<div class="swatch-set">
+				<div class="swatch swatch--status-error">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Error</li>
+						<li class="swatch__spec">#f00</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--status-success">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Success</li>
+						<li class="swatch__spec">#5ddd00</li>
+					</ul>
+				</div>
+				<div class="swatch swatch--status-info">
+					<div class="swatch__chip"></div>
+					<ul class="swatch__body">
+						<li class="swatch__name">Info</li>
+						<li class="swatch__spec">#9cf</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<p><a class="link--top js-animate-scroll" href="#TOC">Contents</a></p>
+	</section>
+
+	<hr>
+
+	<section id="IconsAndImages">
+		<h2>Icons and images</h2>
+		<p>Images should never be used as simple decoration. They should be essential content.</p>
+	
+		<h3 id="Icons">Icons</h3>
+	
+		<ul class="list list--bullet">
+			<li>Ensure icons are clear, simple, and accompanied by relevent text where appropriate</li>
+			<li>Don’t hide functionality behind ambiguous icons</li>
+		</ul>
+
+		<div class="example">
+			<ul class="list">
+				<li>
+					<i class="icon icon--search"></i>&nbsp;–&nbsp;icon-search.png</p>
+				</li>
+				<li>
+					<i class="icon icon--menu"></i>&nbsp;–&nbsp;icon-menu.png</p>
+				</li>
+				<li>
+					<i class="icon icon--close"></i>&nbsp;–&nbsp;icon-close.png</p>
+				</li>
+				<li>
+					<i class="icon icon--info"></i>&nbsp;–&nbsp;icon-info.png</p>
+				</li>
+				<li>
+					<i class="icon icon--alert"></i>&nbsp;–&nbsp;icon-alert.png</p>
+				</li>
+				<li>
+					<i class="icon icon--next"></i>&nbsp;–&nbsp;icon-next.png</p>
+				</li>
+				<li>
+					<i class="icon icon--check"></i>&nbsp;–&nbsp;icon-check.png</p>
+				</li>
+			</ul>			
+		</div>
+	
+		<h3 id="StepCircles">Step circles</h3>
+	
+		<div class="example">
+			<ul>
+				<li><span class="circle circle__step">1</span>  <span class="circle circle__step--large">1</span></li>
+				<li><span class="circle circle__step">2</span>  <span class="circle circle__step--large">2</span></li>
+				<li><span class="circle circle__step">3</span>  <span class="circle circle__step--large">3</span></li>
+				<li><span class="circle circle__step">4</span>  <span class="circle circle__step--large">4</span></li>
+				<li><span class="circle circle__step">5</span>  <span class="circle circle__step--large">5</span></li>
+			</ul>
+		</div>
+	
+		<h3 id="Logo">Logo</h3>
+	
+		<div class="example">
+			<img src="/public/images/fpo_logo.png" />
+		</div>
+	
+		<h3 id="Images">Images</h3>
+	
+		<p>Images should be cropped to one of the following proportions:</p>
+		<ul class="list list--bullet">
+			<li>Landscape &mdash; 3:2 aspect ratio</li>
+			<li>Widescreen &mdash; 16:9 aspect ratio</li>
+			<li>Square &mdash; 1:1 aspect ratio</li>
+		</ul>
+		<div class="example">
+			<img src="/public/images/fpo_4x3.png" />
+			<img src="/public/images/fpo_16x9.png" />
+			<img src="/public/images/fpo_square.png" />
+		</div>
+	
+		<h3 id="FigureWithCaption">Figure with caption</h3>
+	
+		<p>Use captions to explain images where appropriate.</p>
+		<div class="example">
+			<figure>
+				<img src="/public/images/fpo_4x3.png" />
+				<figcaption>This is an example of an image with a caption. Photo captions, also known as cutlines, are a few lines of text used to explain or elaborate on published photographs.</figcaption>
+			</figure>
+		</div>
+		<p><a class="link--top js-animate-scroll" href="#TOC">Contents</a></p>
+	</section>
+
+	<hr>
+
+	<section id="Tables">
+		<h2>Tables</h2>
+	
+		<p>Consider putting content into tables to make it easier to scan and compare.</p>
+	
+		<h3 id="NumericTabularData">Numeric tabular data</h3>
+
+		<p>When comparing rows of numbers, align numbers to the right in table cells.</p>
+	
+		</ul>
+	
+		<div class="example">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Date</th>
+						<th class="data--numeric" scope="col">Paper form</th>
+						<th class="data--numeric" scope="col">Digital</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>25 November to 1 December 2013</td>
+						<td class="data--numeric">2,763</td>
+						<td class="data--numeric">1,792</td>
+					</tr>
+					<tr>
+						<td>2 to 8 December 2013</td>
+						<td class="data--numeric">2,850</td>
+						<td class="data--numeric">1,740</td>
+					</tr>
+					<tr>
+					 <td>9 to 15 December 2013</td>
+						<td class="data--numeric">2,388</td>
+						<td class="data--numeric">1,683</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	
+		<h3 id="DataInATable">Data in a table</h3>
+	
+		<p>Not all content in tables should be right-aligned.</p>
+	
+		<div class="example">
+			<table>
+				<thead>
+					<tr>
+						<th colspan="2">Dates and amounts</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>First 6 weeks</td>
+						<td>$109.80 per week</td>
+					</tr>
+					<tr>
+						<td>Next 33 weeks</td>
+						<td>$109.80 per week</td>
+					</tr>
+					<tr>
+					 <td>Total estimated pay</td>
+						<td>$4,282.20</td>
+					</tr>
+					<tr>
+						<td>Tell the mother’s employer</td>
+						<td>28 days before they want to start maternity pay</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<p><a class="link--top js-animate-scroll" href="#TOC">Contents</a></p>
+	</section>
+
+	<hr>
+
+	<section id="Buttons">
+		<h2>Buttons</h2>
+		<p>Use buttons to move though a transaction, or to prompt the user to perform significant actions. Aim to use only one button within the user’s field of view at a time.</p>
+		<h3 id="ButtonText">Button text</h3>
+		<p>Button text should be short and describe the action the button performs.</p>
+		<div class="example">
+			<input class="button" type="submit" value="Save and continue">
+		</div>
+		<h3 id="ButtonTypes">Button types</h3>
+		<div class="example">
+			<ul>
+				<li>
+					<input class="button" type="submit" value="Primary button">
+				</li>
+				<li>
+					<input class="button button--secondary" type="submit" value="Secondary button">
+				</li>
+				<li>
+					<input class="button button--disabled" type="submit" value="Disabled button">
+				</li>
+			</ul>
+		</div>
+		<h3 id="ButtonGroup">Button group</h3>
+		<p>Button groups collect related buttons into a horizontally-aligned set.</p>
+		<div class="example">
+			<ul class="button-group">
+				<li><a href="#" class="button">Do something</a></li>
+				<li><a href="#" class="button button--secondary">Cancel</a></li>
+			</ul>
+		</div>
+		<p><a class="link--top js-animate-scroll" href="#TOC">Contents</a></p>
+	</section>
+
+	<hr>
+
+	<section id="Forms">
+
+		<h2>Forms</h2>
+	
+		<p>Keep forms as simple as possible. Only ask for essential information. Make information sharing opt-in by default.</p>
+
+		<h3 id="OptionalAndMandatoryFields">Optional and mandatory fields</h3>
+
+		<ul class="list list--bullet">
+			<li>only ask for the information you absolutely need</li>
+			<li>if you do ask for optional information, mark the labels of optional fields with “(optional)”</li>
+			<li>don't mark mandatory fields with asterisks</li>
+		</ul>
+
+		<div class="example">
+			<ul>
+				<li class="form-group">
+					<label class="form-label form-label--optional" for="first-name-1">First name</label>
+					<input class="form-control" id="first-name-1" type="text">
+				</li>
+				<li class="form-group">
+					<label class="form-label" for="email-1">Email address</label>
+					<input class="form-control" id="email-1" type="text">
+				</li>
+			</ul>
+		</div>
+
+		<h3 id="LabelsAndFields">Labels and fields</h3>
+
+		<ul class="list list--bullet">
+			<li>all form fields should be given labels</li>
+			<li>don’t hide labels, unless the surrounding context makes them unnecessary</li>
+			<li>labels should be aligned above their fields</li>
+			<li>label text should be short, direct and in sentence case</li>
+			<li>avoid colons at the end of labels</li>
+			<li>make field widths proportional to the input they take.</li>
+			<li>ensure that users can enter the information they need at smaller screen sizes by snapping form fields to 100% width at smaller screen sizes.</li>
+		</ul>
+
+		<div class="example">
+			<ul>
+				<li class="form-group">
+					<label class="form-label" for="full-name-f1">Full name</label>
+					<input class="form-control" id="full-name-f1" type="text">
+				</li>
+				<li class="form-group">
+					<label class="form-label" for="zip">Zip code</label>
+					<input class="form-control form-control--sized" id="zip" type="text" length="9">
+				</li>
+			</ul>
+		</div>
+
+		<h3 id="FormFocusStates">Form focus states</h3>
+		<ul class="list list--bullet">
+			<li>Form fields transition to a “focus” state when they are used</li>
+			</li>
+			<li>
+				Click on the label "Full name" or inside the form field to show the focus state.
+			</li>
+		</ul>
+
+		<div class="example">
+			<ul>
+				<li class="form-group">
+					<label class="form-label" for="full-name-f4">Full name</label>
+					<input class="form-control" id="full-name-f4" type="text">
+				</li>
+			</ul>
+		</div>
+
+		<h3  id="HintText">Hint text</h3>
+		<ul class="list list--bullet">
+			<li>don't use placeholder text in form fields, as this will disappear once content is entered into the form field</li>
+			<li>use hint text for supporting contextual help, this will always be shown</li>
+			<li>hint text should sit above a form field</li>
+			<li>ensure hint text can be read correctly by screen readers</li>
+		</ul>
+
+		<div class="example">
+			<div class="form-group">
+				<label class="form-label" for="ni-number">
+					SSN number<span class="form-label__hint">e.g., 123-45-6789</span>
+				</label>
+				<input class="form-control" id="ni-number" type="text">
+			</div>
+		</div>
+
+		<h3 id="FormSpacing">Spacing between form elements</h3>
+		<p>Use appropriate spacing between form elements.</p>
+
+		<div class="example">
+			<fieldset class="fieldset--box">
+				<legend>These fields use standard spacing</legend>
+				<ul>
+					<li class="form-group">
+						<label class="form-label" for="name-1">Name</label>
+						<input class="form-control" id="name-1" type="text">
+					</li>
+					<li class="form-group">
+						<label class="form-label" for="town-1">Hometown</label>
+						<input class="form-control" id="town-1" type="text">
+					</li>
+					<li class="form-group">
+						<label class="form-label" for="vacay-1">Last vacation spot</label>
+						<input class="form-control" id="vacay-1" type="text">
+					</li>
+				</ul>
+			</fieldset>
+			<fieldset class="fieldset--box">
+				<legend>These fields use “compact” spacing</legend>
+				<ul>
+					<li class="form-group form-group--compact">
+						<label class="form-label" for="name-1">Name</label>
+						<input class="form-control" id="name-1" type="text">
+					</li>
+					<li class="form-group form-group--compact">
+						<label class="form-label" for="town-1">Hometown</label>
+						<input class="form-control" id="town-1" type="text">
+					</li>
+					<li class="form-group form-group--compact">
+						<label class="form-label" for="vacay-1">Last vacation spot</label>
+						<input class="form-control" id="vacay-1" type="text">
+					</li>
+				</ul>
+			</fieldset>
+
+			<fieldset class="fieldset--box">
+				<legend>These fields use “related” spacing</legend>
+				<ul>
+					<li class="form-group form-group--related">
+						<label class="form-label" for="name-1">Name</label>
+						<input class="form-control" id="name-1" type="text">
+					</li>
+					<li class="form-group form-group--related">
+						<label class="form-label" for="town-1">Hometown</label>
+						<input class="form-control" id="town-1" type="text">
+					</li>
+					<li class="form-group form-group--related">
+						<label class="form-label" for="vacay-1">Last vacation spot</label>
+						<input class="form-control" id="vacay-1" type="text">
+					</li>
+				</ul>
+			</fieldset>
+		</div>
+
+		<h3 id="FieldsetsAndLegends">Fieldsets and legends</h3>
+		<ul class="list list--bullet">
+			</li>use fieldsets to group related form controls</li>
+			<li>the first element inside a fieldset must be a <code>legend</code> element which describes the group</li>
+			<li>legends may be hidden in favor of prompts or headers with the <code>is-visually-hidden</code> class</li>
+			<li>Use the <code>fieldset--box</code> class to make fieldsets visible</li>
+		</ul>
+		<div class="example">
+			<fieldset class="fieldset--box">
+				<legend>These fields are grouped in a visible fieldset</legend>
+				<ul>
+					<li class="form-group">
+						<label class="form-label" for="name-1">Name</label>
+						<input class="form-control" id="name-1" type="text">
+					</li>
+					<li class="form-group">
+						<label class="form-label" for="town-1">Hometown</label>
+						<input class="form-control" id="town-1" type="text">
+					</li>
+				</ul>
+			</fieldset>
+			<h4 class="as-h5 form__prompt">Here's a prompt used instead of a legend for a standard fieldset <span class="form__prompt__instruction">This prompt also has an instruction</span></h4>  
+			<fieldset>
+				<legend class="is-visually-hidden">These fields are grouped in a fieldset</legend>
+				<ul>
+					<li class="form-group">
+						<label class="form-label" for="name-1">Name</label>
+						<input class="form-control" id="name-1" type="text">
+					</li>
+					<li class="form-group">
+						<label class="form-label" for="town-1">Hometown</label>
+						<input class="form-control" id="town-1" type="text">
+					</li>
+				</ul>
+			</fieldset>  
+		</div>  
+
+		<h3 id="SelectBoxes">Select boxes</h3>
+		<p>
+			Avoid using select boxes (drop-down lists) – use radio buttons or checkboxes instead.
+		</p>
+
+		<h3 id="RadioButtons">Radio buttons</h3>
+
+		<ul class="list list--bullet">
+			<li>use these to let users choose a single option from a list</li>
+			<li>for more than two options, radio buttons should be stacked</li>
+			<li>radio buttons with large hit areas are easier to select with a mouse or touch devices</li>
+		</ul>
+
+		<h4>Inline radio buttons</h4>
+
+		<div class="example">
+
+			<form>
+				<h5 class="form__prompt">Do you like pizza?</h5>
+				<fieldset>
+					<legend class="is-visually-hidden">Do you like pizza?</legend>
+					<label class="form-control--radio form-control--inline" for="radio-inline-1">
+						<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+						Yes
+					</label>
+					<label class="form-control--radio form-control--inline" for="radio-inline-2">
+						<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+						No
+					</label>
+				</fieldset>
+			</form>
+		</div>
+
+		<h4>Stacked radio buttons</h4>
+		<div class="example">
+			<form>
+				<h5 class="form__prompt">Where do you live? <span class="form__prompt__instruction">Choose carefully</span></h5>
+				<fieldset>
+					<legend class="is-visually-hidden">Where do you live?</legend>
+					<label class="form-control--radio" for="radio-1">
+						<input id="radio-1" type="radio" name="radio-group" value="Queens">
+						Queens
+					</label>
+					<label class="form-control--radio" for="radio-2">
+						<input id="radio-2" type="radio" name="radio-group" value="Brooklyn">
+						Brooklyn
+					</label>
+					<p class="form__separator">or</p>
+					<label class="form-control--radio" for="radio-3">
+						<input id="radio-3" type="radio" name="radio-group" value="Manhattan">
+						Manhattan
+					</label>
+				</fieldset>
+			</form>
+		</div>
+
+		<h3 id="Checkboxes">Checkboxes</h3>
+		<ul class="list list--bullet">
+			<li>use these to select either on/off toggles or multiple selections</li>
+			<li>make it clear with words when users can select one or multiple options</li>
+		</ul>
+
+		<h4 class="heading-small">Stacked checkboxes</h4>
+		<div class="example">
+			<form>
+				<h5 class="form__prompt">Which types of liquor do you enjoy? <span class="form__prompt__instruction">Select all that apply</span></h5>  
+				<fieldset>
+
+					<legend class="is-visually-hidden">Which types of liquor do you enjoy?</legend>
+
+					<label class="form-control--checkbox" for="waste-type-1">
+						<input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+						Scotch
+					</label>
+					<label class="form-control--checkbox" for="waste-type-2">
+						<input id="waste-type-2" name="waste-types" type="checkbox" value="waste-mines">
+						Gin
+					</label>
+					<label class="form-control--checkbox" for="waste-type-3">
+						<input id="waste-type-3" name="waste-types" type="checkbox" value="waste-farm-agricultural">
+						Rye
+					</label>
+
+				</fieldset>
+			</form>
+		</div>
+
+		<h4>Inline checkboxes</h4>
+		<ul class="list list--bullet">
+			<li>large hit areas aren't always appropriate</li>
+			<li>only pre-select options if there's a strong, user-centred reason to</li>
+		</ul>
+
+		<div class="example">
+			<form>
+				<ul>
+					<li class="form-group">
+						<label class="form-label" for="telephone-number">Enter your email address</label>
+						<input class="form-control form-control" id="telephone-number" name="telephone-number" type="email">
+					</li>
+					<li class="form-group form-group--compact">
+						<label class="form-control--checkbox form-control--checkbox--inline" for="checkbox-telephone-number">
+							<input id="checkbox-telephone-number" name="contact-by-text-phone" type="checkbox" value="true"> Don’t you dare email me
+						</label>
+					</li>
+				</ul>
+			</form>
+		</div>
+
+		<h3 id="ConditionallyRevealingContent">
+			Conditionally revealing content
+		</h3>
+		<ul class="list list--bullet">
+			<li>reveal additional questions, depending on the context</li>
+			<li>insets are used to emphasise this supporting information</li>
+		</ul>
+
+		<h4>Radio buttons</h4>
+
+		<div class="example">
+
+			<form>
+				<h5 class="form__prompt">Would you like a cat? <span class="form__prompt__instruction">Click “yes” to see this in action</span></h5>
+				<fieldset class="js-toggle-group">
+
+					<legend class="is-visually-hidden">do you have a cat?</legend>
+
+						<label class="form-control--radio form-control--inline js-has-toggle" data-target="CatExample" for="radio-indent-1">
+							<input id="radio-indent-1" type="radio" name="radio-indent-group" value="Yes">
+							Yes
+						</label>
+
+						<label class="form-control--radio form-control--inline js-has-toggle" for="radio-indent-2">
+							<input id="radio-indent-2" type="radio" name="radio-indent-group" value="No">
+							No
+						</label>
+
+						<div class="form-group form-group--compact js-hidden" id="CatExample">
+							<label class="form-label" for="cat-name">What is its name?</label>
+							<input class="form-control" name="cat-name" type="text" id="cat-name">
+						</div>
+
+				</fieldset>
+			</form>
+
+		</div>
+
+		<h4>Checkboxes</h4>
+
+		<div class="example">
+			<form>
+				<h5 class="form__prompt">What do you like on your pizza? <span class="form__prompt__instruction">Select all that apply</span></h5>
+				<fieldset class="js-toggle-group">
+					<legend class="is-visually-hidden">What is your nationality?</legend>
+					<label class="form-control--checkbox" for="toppings-tomato">
+						<input id="toppings-tomato" name="tomato" type="checkbox" value="Tomato"> Tomato
+					</label>
+					<label class="form-control--checkbox" for="toppings-sausage">
+						<input id="toppings-sausage" name="sausage" type="checkbox" value="Sausage"> Sausage
+					</label>
+					<label class="form-control--checkbox js-has-toggle" for="toppings-other" data-target="WhatTopping">
+						<input id="toppings-other" name="other" type="checkbox" value="Other"> Other topping
+					</label>					
+					<div class="form-group form-group--compact js-hidden" id="WhatTopping">
+						<label class="form-label" for="what-topping">What is its name?</label>
+						<input class="form-control" name="what-topping" type="text" id="what-topping">
+					</div>					
+				</fieldset>
+			</form>
+		</div>
+
+		<p><a class="link--top js-animate-scroll" href="#TOC">Contents</a></p>
+	
+	</section>
+
+</section>
+{% endblock %}

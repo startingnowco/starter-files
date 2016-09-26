@@ -1,0 +1,85 @@
+//
+// Buttons
+//
+
+.button {
+  position: relative;
+  display: inline-block;
+  border: none;
+  border-radius: 0;
+  padding: space(standard, small);
+  font-size: fontSize(base-em);
+  line-height: lineHeight(tight);
+  text-decoration: none;
+  vertical-align: middle;
+  background-color: palette(process-blue);
+  color: #fff;
+  -webkit-appearance: none;
+  box-shadow: 0 2px 0 palette(process-blue, dark);
+  cursor: pointer;
+	&:hover,
+	&:focus {
+		background-color: palette(process-blue, light);
+	}
+	&:visited {
+		color: palette(white);
+	}
+	&:active {
+		top: 2px;
+		box-shadow: 0 0 0 palette(process-blue, dark);
+	}
+}
+
+// Secondary
+.button--secondary {
+	background-color: palette(white);
+	border: 1px solid palette(process-blue);
+	color: palette(process-blue);
+	box-shadow: none;
+	&:hover,
+	&:focus {
+		background-color: palette(white);
+		border-color: palette(process-blue, light);
+		color: palette(process-blue, light);
+	}
+	&:visited {
+		color: palette(process-blue);
+	}
+	&:active {
+		top: 0;
+		box-shadow: none;
+	}
+}
+
+// Disabled
+.button--disabled,
+.button[disabled],
+.button[disabled="disabled"] {
+	background-color: palette(gray, light);
+	color: palette(gray);
+	zoom: 1;
+	cursor: default;
+	box-shadow: 0 2px 0 palette(gray);
+	pointer-events: none;
+	&:hover {
+		cursor: default;
+		background-color: palette(gray, light);
+		color: palette(gray);
+	}
+	&:active {
+		top: 0;
+		box-shadow: 0 2px 0 palette(gray);
+	}
+}
+
+// Button group
+.button-group {
+	display: flex;
+	align-items: top;
+	li {
+		margin: 0 space(standard, small) 0 0;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

@@ -1,0 +1,235 @@
+//
+// Forms
+//
+
+// 
+// Helpers
+
+fieldset {
+  @include clearfix;
+  padding: 0;
+  border: none;
+  width: 100%;
+}
+textarea{
+  display: block; // Remove margin under textarea in Chrome and FF
+}
+
+//
+// Form group
+
+.form-group {
+  @include clearfix;
+  width: 100%;
+  * + * {
+  	margin-top: 0;
+  }
+}
+
+.form-group--related {
+  * + & {
+  	margin-top: space(standard, x-small);
+  }
+}
+
+.form-group--compact {
+  * + & {
+  	margin-top: space(standard, small);
+  }
+}
+
+//
+// Form labels
+
+.form-label {
+  display: block;
+  margin-bottom: space(mobile, x-small);
+  color: $body-color;
+  @include breakpoint($bp-med) {
+  	margin-bottom: space(standard, x-small);
+  }
+}
+.form-label--bold {
+	font-weight: fontWeight(headline);
+}
+.form-label--optional {
+	&:after {
+		content: "(optional)";
+		display: inline-block;
+		margin-left: .5em;
+		vertical-align: baseline;
+		font-size: fontSize(small);
+		color: palette(gray, dark);
+	}
+}
+
+//
+// Hints
+
+.form-label__hint {
+  display: block;
+  margin-bottom: space(mobile, x-small);
+  font-size: fontSize(small);
+  line-height: lineHeight(tight);
+  font-weight: normal;
+  color: palette(gray, dark);
+  @include breakpoint($bp-med) {
+  	margin-bottom: space(standard, x-small);
+  }
+}
+
+//
+// Form controls
+
+.form-control {
+	width: 100%;
+	padding: space(mobile, x-small);
+	background-color: palette(white);
+	border: 2px solid palette(gray);
+}
+.form-control--sized {
+	width: auto;
+}
+
+// Widths
+@include breakpoint($bp-med) {
+	.form-control--one-fourth {
+		width: 25%;
+	}
+	.form-control--one-third {
+		width: 33.333333%;
+	}
+	.form-control--one-half {
+		width: 50%;
+	}
+	.form-control--two-thirds {
+		width: 66.666666%;
+	}
+	.form-control--three-fourths {
+		width: 75%;
+	}
+}
+
+//
+// Radio and checkboxes
+
+.form-control--radio,
+.form-control--checkbox {
+	display: block;
+	padding: space(standard, small);
+	background-color: palette(gray, x-light);
+	input {
+		vertical-align: middle;
+	}
+}
+
+// Radio buttons
+.form-control--radio {
+  input {
+    margin: -4px 10px 0 0;
+  }
+  + .form-control--radio {
+  	margin-top: space(standard, x-small);
+  }
+}
+
+// Checkboxes
+.form-control--checkbox {
+  input {
+    margin: -2px 10px 0 0;
+  }
+  + .form-control--checkbox {
+  	margin-top: space(standard, x-small);
+  }  
+}
+.form-control--checkbox--inline {
+	display: inline-block;
+	padding: 0;
+	background-color: transparent;
+}
+
+//
+// Focus states
+
+input:focus {
+	background-color: palette(white);
+	border-color: palette(black);
+	outline: none;
+}
+
+//
+// Fieldsets + legends
+
+.fieldset {
+	// With a visible box
+	&--box {
+		border: 1px solid palette(gray,light);
+		padding: space(standard);
+		padding-top: 0;
+		background-color: palette(gray,x-light);
+	}
+	// With inline form elements
+	// ?
+}
+
+// Standard legend
+fieldset legend {
+	font-weight: fontWeight(headline);
+	+ * {
+		margin-top: space(standard);
+	}
+	.circle,
+	.icon {
+		margin-right: space(standard, x-small);
+	}
+}	
+// Hidden legend
+legend.is-visually-hidden {
+	+ * {
+		margin-top: 0;
+	}
+	.fieldset--box & {
+		+ * {
+			margin-top: space(standard);
+		}
+	}
+}
+
+
+//
+// Instructions
+.form__separator {
+	margin-top: space(standard, small);
+	+ * {
+		margin-top: space(standard, small);
+	}
+}
+
+// Prompt
+.form__prompt {
+	+ * {
+		margin-top: space(standard, single);
+	}
+	.circle,
+	.icon {
+		margin-right: space(standard, x-small);
+	}	
+	.form__prompt__instruction {
+		display: block;
+		margin-top: 0;
+		font-size: fontSize(base);
+		font-weight: fontWeight(body);
+		color: $body-color;
+	}
+}
+
+//
+// Inline form controls
+.form-control--inline {
+	display: inline-block;
+	vertical-align: middle;
+	+ .form-control--inline {
+		margin-top: 0;
+		margin-left: space(standard, x-small);
+	}
+}

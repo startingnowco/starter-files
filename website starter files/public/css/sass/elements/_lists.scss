@@ -1,0 +1,59 @@
+//
+// Lists
+//
+
+.list {
+	li + li {
+		margin-top: space(standard, x-small);
+	}
+	ol, ul {
+		margin-top: space(standard, x-small);
+	}
+}
+
+.list--bullet {
+	margin-left: 1.5em;
+	list-style: disc;
+}
+.list--number {
+	margin-left: 1.5em;
+	list-style: decimal;
+	ol {
+		list-style: upper-alpha;
+		ol {
+			list-style: lower-roman;
+			ol {
+				list-style: lower-alpha;
+			}
+		}
+	}
+}
+
+.list--inline {
+	li {
+		display: inline-block;
+		margin: 0 space(standard, x-small) 0 0;
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+}
+
+//
+// Definition lists
+
+dl {
+	overflow: hidden;
+}
+dt {
+	font-weight: fontWeight(headline);
+	color: $body-color;
+	+ dd {
+		margin-top: 0;
+	}
+}
+dd {
+	+ dd {
+		margin-top: 0;
+	}
+}

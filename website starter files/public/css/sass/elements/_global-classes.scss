@@ -1,0 +1,73 @@
+//
+// Global classes
+//
+
+// Clearfix
+
+.cf {
+  @include clearfix;
+}
+
+// Completely remove from the flow and screen readers.
+
+.is-hidden {
+  @include hidden;
+}
+
+// Completely remove from the flow but leave available to screen readers.
+
+.is-visually-hidden {
+  @include visuallyhidden;
+}
+
+// Text alignment
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
+}
+
+// Display classes
+
+/*
+.hide-small {
+    @media all and (max-width: $bp-med) {
+        display: none;
+    }
+}
+
+.hide-med {
+    @media all and (min-width: $bp-med) and (max-width: $bp-large) {
+        display: none;
+    }
+}
+
+.hide-large {
+    @media all and (min-width: $bp-large) {
+        display: none;
+    }
+}
+*/
+
+// Statuses
+
+.has-success {
+  color: palette(status, success);
+}
+
+.has-error {
+  color: palette(status, error);
+}
+
+// js
+
+.js-hidden {
+	display: none;
+}

@@ -1,0 +1,43 @@
+//
+// HTML
+//
+
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+html {
+  font-size: fontSize(base-mobile);
+  line-height: lineHeight(base-mobile);
+  @include breakpoint($bp-med) {
+    font-size: fontSize(base);
+    line-height: lineHeight(base);
+  }
+}
+
+//
+// Body
+//
+
+body {
+	background: palette(white);
+	font-family: fontFamily(body);
+	font-size: 100%;
+	line-height: lineHeight(base);
+	color: $body-color;
+
+	// The owl selector
+		
+	* {
+		margin: 0;
+	}
+	
+	* + * {
+		margin-top: space(mobile);
+		@include breakpoint($bp-med) {
+			margin-top: space(standard);
+		}
+	}
+}

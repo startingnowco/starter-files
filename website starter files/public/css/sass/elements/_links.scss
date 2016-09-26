@@ -1,0 +1,55 @@
+//
+// Links
+//
+
+a {
+	color: palette(process-cyan);
+	text-decoration: underline;
+	outline: 0;
+	&:hover {
+		color: palette(process-cyan, light);
+		text-decoration: none;
+	}
+	&:visited {
+		color: palette(process-cyan, dark);
+	}
+	&:focus {
+  	color: palette(process-cyan, light);
+	}
+}
+
+// External
+a[rel="external"] {
+	&:after {
+		// content: url(http://upload.wikimedia.org/wikipedia/commons/6/64/Icon_External_Link.png);
+		content: "☞";
+		display: inline-block;
+  	margin-left: .1em;
+  }
+}
+
+// Back
+.link--back {
+	&:after {
+		content: "↩";
+		display: inline-block;
+		margin-left: .1em;
+	}
+}
+
+// Top
+.link--top {
+	&:after {
+		content: "↑";
+		display: inline-block;
+		margin-left: .1em;
+	}
+}
+
+// More
+.link--more {
+	&:after {
+		content: "…";
+		display: inline-block;
+	}
+}

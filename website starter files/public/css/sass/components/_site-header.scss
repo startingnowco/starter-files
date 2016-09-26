@@ -1,0 +1,21 @@
+//
+// Site header
+//
+
+.site-header {
+  position: relative;
+  padding: space(standard) 0;
+  text-align: center;
+  background: palette(gray, dark);
+  color: palette(white);  
+}
+
+
+.logo {
+	display: inline-block;
+	margin: 0 auto;
+	color: palette(white);
+	> a {
+  	color: palette(white);
+	}
+}

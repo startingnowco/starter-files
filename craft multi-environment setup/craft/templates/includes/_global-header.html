@@ -1,0 +1,21 @@
+{% import "includes/_macros.html" as macros %}
+<ul>
+	<li{% if not craft.request.firstSegment %} class="current"{% endif %}><a href="{{ siteUrl }}">Home</a></li>
+	<li class="{{ macros.is_active('our-studio') }}"><a href="{{ url('secHandle') }}">Some Section</a></li>
+</ul>
+#}
+
+<header id="Top" class="site-header" role="banner">
+	<div class="site-header__inner lc">
+		<h1 class="logo"><a{% if not craft.request.firstSegment %} class="current"{% endif %} href="{{ siteUrl }}" rel="home" title="Home">{{ siteName }}</a></h1>
+		<nav id="nav" role="navigation">
+			<ul class="main-nav">
+				<li class="{{ macros.is_active('segment-name') }}"><a href="{{ url('sectionHandle') }}">Item 1</a></li>
+				<li class="{{ macros.is_active('segment-name') }}"><a href="{{ url('sectionHandle') }}">Item 2</a></li>
+				<li class="{{ macros.is_active('segment-name') }}"><a href="{{ url('sectionHandle') }}">Item 3</a></li>
+			</ul>
+			<a class="nav-btn" id="NavOpenBtn" href="#nav">Menu</a>
+			<a class="close-btn" id="NavCloseBtn" href="#top">Close</a>
+		</nav>
+	</div>
+</header>

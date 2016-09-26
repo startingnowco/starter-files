@@ -1,0 +1,98 @@
+//
+// Icons
+//
+
+// Icon mixin
+@mixin icon($icon-name, $icon-width, $icon-height, $icon-sub-folder:false) {
+
+  width: #{$icon-width}px;
+  height: #{$icon-height}px;
+
+  @if $icon-sub-folder {
+    background-image: url("../images/icons/#{$icon-sub-folder}/#{$icon-name}.png");
+
+    @include device-pixel-ratio() {
+      background-image: url("../images/icons/#{$icon-sub-folder}/#{$icon-name}@2x.png");
+      background-size: 100%;
+    }
+
+  } @else {
+    background-image: url("../images/icons/#{$icon-name}.png");
+    @include device-pixel-ratio() {
+      background-image: url("../images/icons/#{$icon-name}@2x.png");
+      background-size: 100%;
+    }
+  }
+}
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+
+.icon--search {
+  @include icon(icon-search, 32, 32);
+}
+.icon--check {
+  @include icon(icon-check, 32, 32);
+}
+.icon--info {
+  @include icon(icon-info, 32, 32);
+}
+.icon--alert {
+  @include icon(icon-alert, 32, 32);
+}
+.icon--next {
+  @include icon(icon-next, 32, 32);
+}
+.icon--menu {
+	@include icon(icon-menu, 32, 32);
+}
+.icon--close {
+	@include icon(icon-close, 32, 32);
+}
+.icon--plus {
+	@include icon(icon-plus, 50, 50);
+}
+.icon--minus {
+	@include icon(icon-minus, 50, 50);
+}
+
+//
+// Circles
+
+$circle-font-size: 12px;
+$circle-font-size-large: 19px;
+
+.circle {
+  display: inline-block;
+  border-radius: 50%;
+  background: palette(black);
+  color: palette(white);
+  font-family: "Courier New", Courier, Helvetica, Arial, sans-serif;
+  font-size: $circle-font-size;
+  font-style: normal;
+  font-weight: fontWeight(headline);
+  text-align: center;
+  vertical-align: middle;
+  + .circle {
+  	margin-top: 0;
+  }
+}
+
+// Standard step circle
+.circle__step {
+  min-width: 2 * $circle-font-size;
+  min-height: 2 * $circle-font-size;
+  line-height: 2 * $circle-font-size;
+}
+
+// Large step circle
+.circle__step--large {
+  font-size: $circle-font-size-large;
+  min-width: 2 * $circle-font-size-large;
+  min-height: 2 * $circle-font-size-large;
+  line-height: 2 * $circle-font-size-large;
+}
